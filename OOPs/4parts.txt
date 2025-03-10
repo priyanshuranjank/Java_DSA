@@ -1,0 +1,11 @@
+Encapsulation
+
+
+Encapsulation is defined as the wrapping up of data & methods under a single unit.
+it also implements data hiding.
+
+Constructors
+It have the same name as class or stucture
+don't have a return type. not even void
+it can be called only once , at object creation
+Memory alloction happens when constructor is called.
