@@ -1,3 +1,4 @@
+
 public class LinkedList {
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -5,19 +6,23 @@ public class LinkedList {
         ll.addLast(2);
         // ll.print();
 
-        System.out.println();
+        // System.out.println();
 
         ll.add(1, 5);
+        // ll.add(2, 6);
+        // ll.add(3, 7);
         // ll.print();
 
         System.out.println("size: "+ll.size);
 
         // ll.removeFirst();
         // System.out.println("size: "+ll.size);
+        // ll.print(); System.out.println();
+        // ll.removeLast();
         ll.print(); System.out.println();
-        ll.removeLast();
-        ll.print();
-
+        // System.out.println(ll.search(5)); //return index of 5
+        // System.out.println(ll.recursiveSearch(7)); //return index value of 7
+        
     }
 
     //Node 
@@ -60,11 +65,12 @@ public class LinkedList {
     //Add in middle**
     public void add(int index, int data){
         if(index==0){ // index is 0, means updating head(1st node)
-            addFirst(data);  return;
+            addFirst(data);  
+            return;
         }
 
         Node newNode = new Node(data); 
-        size++;
+        
         Node temp = head;
         int i=0;
         while(i < index-1){
@@ -73,6 +79,7 @@ public class LinkedList {
         }
         newNode.next = temp.next;
         temp.next = newNode;
+        size++;
     }
 
     //remove First node/element
@@ -111,6 +118,38 @@ public class LinkedList {
         temp.next = null;
         tail = temp;
         size--;
+    }
+    //Iterative Search / Linear Search
+    public int search(int key){
+        Node temp = head; int i = 0;
+
+        while(temp != null){
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
+   
+    //Recursive Search
+    public int recursiveSearch(int key){
+        return helperFunc(head, key);
+    }
+    public int helperFunc(Node head, int key){
+        if(head==null){
+            return -1;
+        }
+        if(head.data == key){
+            return 0;
+        }
+        int index = helperFunc(head.next, key);
+        if(index == -1){
+            return -1;
+        }
+
+        return index + 1;
     }
 
 }
