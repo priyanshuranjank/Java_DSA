@@ -3,14 +3,21 @@ public class LinkedList {
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
         ll.addLast(2);
-        ll.print();
+        // ll.print();
 
         System.out.println();
 
         ll.add(1, 5);
+        // ll.print();
+
+        System.out.println("size: "+ll.size);
+
+        // ll.removeFirst();
+        // System.out.println("size: "+ll.size);
+        ll.print(); System.out.println();
+        ll.removeLast();
         ll.print();
 
-        
     }
 
     //Node 
@@ -24,10 +31,12 @@ public class LinkedList {
     }
     public static Node head; //head - property defined as Node
     public static Node tail; //tail 
+    public static int size; // call it by object  ll.size;
 
     //add first
     public void addFirst(int data){
         Node newNode = new Node(data);
+        size++; //give increment after every new node creation
         if(head==null){head=tail=newNode; return;}
         newNode.next = head;
         head = newNode;
@@ -35,6 +44,7 @@ public class LinkedList {
     //add last
     public void addLast(int data){
         Node newNode = new Node(data);
+        size++;
         if(head==null){head=tail=newNode; return;}
         tail.next = newNode;
         tail = newNode;
@@ -54,6 +64,7 @@ public class LinkedList {
         }
 
         Node newNode = new Node(data); 
+        size++;
         Node temp = head;
         int i=0;
         while(i < index-1){
@@ -64,6 +75,42 @@ public class LinkedList {
         temp.next = newNode;
     }
 
+    //remove First node/element
+    public void removeFirst(){
+        if(size==0){
+            System.out.println("Empty Linked List");
+            return;
+        }else if(size==1){
+            head = tail = null;
+            size--;
+            System.out.println("null");
+            return;
+        }
+        head = head.next;
+        size--;
+        
+    }
 
+    //remove last
+    public void removeLast(){
+        if(size==0){
+            System.out.println("Empty Linked List");
+            return;
+        }else if(size==1){
+            head = tail = null;
+            size--;
+            System.out.println("null");
+            return;
+        } 
+        Node temp = head;
+        int i=0;
+        while(i < size-2){
+          temp = temp.next;
+          i++;  
+        }
+        temp.next = null;
+        tail = temp;
+        size--;
+    }
 
 }
