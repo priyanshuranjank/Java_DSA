@@ -151,5 +151,8 @@ public class LinkedList {
 
         return index + 1;
     }
-
+    // reverse Lnked
+    public void reverse(){
+        
+    }
 }
