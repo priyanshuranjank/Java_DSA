@@ -22,7 +22,8 @@ public class LinkedList {
         ll.print(); System.out.println();
         // System.out.println(ll.search(5)); //return index of 5
         // System.out.println(ll.recursiveSearch(7)); //return index value of 7
-        
+        ll.reverse();
+        ll.print();
     }
 
     //Node 
@@ -151,8 +152,18 @@ public class LinkedList {
 
         return index + 1;
     }
-    // reverse Lnked
+    // reverse Linked List
     public void reverse(){
-        
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
 }
