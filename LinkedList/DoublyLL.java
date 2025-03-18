@@ -3,8 +3,11 @@ public class DoublyLL {
         DoublyLL dll = new DoublyLL();
         dll.addFirst(2);
         dll.addLast(4);
-        // dll.addFirst(3);
+        dll.addFirst(3);
         // dll.removeFirst();
+        dll.print();
+        dll.reverse();
+        System.out.println();
         dll.print();
     }
 
@@ -15,6 +18,7 @@ public class DoublyLL {
     newNode.prev = tail;
     tail.next = newNode;
     tail = newNode;
+
     }
     // Add first
     public void addFirst(int data)  {
@@ -40,7 +44,7 @@ public class DoublyLL {
         }
     }
     public void removeFirst(){
-        if(head == null){ System.out.println("Nothing to remove");return ; }
+        if(head == null || head.next == null ){ System.out.println("Nothing to remove or Having only one element"); return ; }
         head = head.next;
         head.prev = null;
     }
@@ -60,5 +64,21 @@ public class DoublyLL {
     public static Node head; //head - property defined as Node
     public static Node tail; 
     public static Node size;
+
+    public void reverse(){
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+
+    }
     
 }
