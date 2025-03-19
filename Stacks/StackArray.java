@@ -1,7 +1,7 @@
 public class StackArray{ 
     public static void main(String[] args) {
      StackArray st = new StackArray();
-        
+//Fixed size Array
      st.push(45);
      st.push(56);
      st.push(23);
