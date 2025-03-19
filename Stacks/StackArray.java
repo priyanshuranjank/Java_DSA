@@ -1,6 +1,6 @@
 public class StackArray{ 
     public static void main(String[] args) {
-     StackArray st = new StackArray();
+     Stack st = new Stack();
 //Fixed size Array
      st.push(45);
      st.push(56);
@@ -18,7 +18,7 @@ public class StackArray{
      
     }
 
-    
+static class Stack{ 
     public static int stack[] = new int[3];
     public static int top = 0;
 
@@ -60,4 +60,5 @@ public class StackArray{
 
         return top<=0;
     }
+}
 }
