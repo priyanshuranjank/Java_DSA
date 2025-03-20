@@ -19,18 +19,20 @@ public class StackArrayList {
             list.add(data);
         }
         public int pop(){
+            if(isEmpty()){ return -1; }
             int val = list.get(list.size()-1);
             list.remove(list.size()-1);
             return val;
         }
 
         public int peek(){
+            if(isEmpty()){ return -1; }
             int val = list.get(list.size()-1);
             return val;
         }
         public boolean isEmpty(){
-
-          return  list.size() == 0;
+            
+            return  list.size() == 0;
         }
         
         public void print(){
