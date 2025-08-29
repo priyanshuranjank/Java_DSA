@@ -1,7 +1,7 @@
 public class SplitSpelling {
   public static void main(String[] args) {
     String[] arr = {"zero","one","two","three","four","five","six","seven","eight","nine"};
-    spelling(100,arr);
+    spelling(1456320,arr);
 
   }
   public static void spelling(int num,String[] arr){
