@@ -50,6 +50,13 @@ public class Queue2Stacks {
       }
       return s1.peek();
      }
+    //  public static int peek(){
+    //   if (s1.isEmpty()) {
+    //     System.out.println("queue is empty.");
+    //     return -1;
+    //   }
+    //   return s1.peek();
+    //  }
   }
 
 }
